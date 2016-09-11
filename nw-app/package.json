@@ -1,0 +1,17 @@
+{
+  "name": "nw-demo",
+  "version": "0.0.1",
+  "main": "index.html",
+  "dependencies": {
+    "serialport-js": "^0.2.1"
+  },
+  "window": {
+    "title": "poors man spectrum analyzer",
+    "toolbar": false,
+    "resizable": false,
+    "frame": false,
+    "width": 1000,
+    "height": 570,
+    "position": "mouse"
+  }
+}

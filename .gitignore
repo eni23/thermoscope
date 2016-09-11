@@ -1,0 +1,14 @@
+non-git
+adb-connect
+
+
+.pioenvs
+.piolibdeps
+
+*bin
+*hex
+*elf
+*apk
+
+npm-debug.log
+nw-app/node_modules
