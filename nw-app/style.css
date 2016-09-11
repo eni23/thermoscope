@@ -2,7 +2,7 @@ body {
   padding-top: 50px;
   height: 100%;
   border: 1px solid gray;
-  min-height: 570px;
+  min-height: 580px;
 }
 
 html {
@@ -83,11 +83,17 @@ div.buttons-nav > .bttn:first-child {
 	display: inline-block;
 }
 #legend {
-	display: none;
+	display: block;
+  left: -150px;
+  top: -200px;
 }
+#legend.rickshaw_legend {
+  display: none;
+}
+
 #legend_container {
 	position: absolute;
-	right: 0;
+	right: 22px;
 	bottom: 26px;
 	width: 0;
 }
@@ -101,7 +107,23 @@ div.buttons-nav > .bttn:first-child {
   -webkit-user-select: none;
   font-family: 'Roboto', sans-serif;
 }
+#smoother.ui-slider-horizontal {
+  margin-left: -98px;
+  margin-bottom: 347px;
+}
 
+#slider-minmax {
+  width: 100px;
+  margin-left: 16px;
+  margin-top: 10px;
+}
+span.rv {
+  color: rgb(131, 88, 0)
+}
+div.rr {
+  font-size: 11px;
+  margin-left: 11px;
+}
 
 .rs_overwrite {
   -webkit-app-region: no-drag;
@@ -154,20 +176,19 @@ div.buttons-nav > .bttn:first-child {
   color: rgb(129, 129, 129)
 }
 
-.senscard1 {  margin-top: 0px; }
-.senscard1 div.sensident { background: #9f0ab1; }
-
-.senscard2 {  margin-top: 2px; }
-.senscard2 div.sensident { background: #6060c0; }
-
-.senscard3 {  margin-top: 2px; }
-.senscard3 div.sensident { background: #30c020; }
-
-.senscard4 {  margin-top: 2px; }
-.senscard4 div.sensident { background: #c05020; }
+.senscard1 {
+  margin-top: 0px;
+}
+.senscard2,
+.senscard3,
+.senscard4 {
+  margin-top: 2px;
+}
 
 
-
+#chart {
+  margin-top: 15px;
+}
 
 .rs_overwrite.disabled div.sensident {
   background: rgb(110, 110, 110);

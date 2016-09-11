@@ -11,30 +11,32 @@ var add_temp_data = function(sensor_id, data){
 
 
 // instantiate our graph!
+var palette = new Rickshaw.Color.Palette( { scheme: 'munin' } );
 
 var graph = new Rickshaw.Graph( {
   element: document.getElementById("chart"),
   width: 835,
-  height: 510,
+  height: 505,
   min:0,
+  max:60,
   interpolation:"basis",
   renderer: 'line',
   series: [
     {
-      color: "#c05020",
-      data: temp_data[0],
+      color: palette.color(),
+      data: temp_data[3],
       name: 'Sensor 4'
     }, {
-      color: "#30c020",
-      data: temp_data[1],
+      color: palette.color(),
+      data: temp_data[2],
       name: 'Sensor 3'
     }, {
-      color: "#6060c0",
-      data: temp_data[2],
+      color: palette.color(),
+      data: temp_data[1],
       name: 'Sensor 2'
     }, {
-      color: "#9f0ab1",
-      data: temp_data[3],
+      color:  palette.color(),
+      data: temp_data[0],
       name: 'Sensor 1'
     }
   ]
@@ -50,29 +52,48 @@ var legend = new Rickshaw.Graph.Legend( {
   graph: graph,
   element: document.getElementById('legend')
 
+});
+var smoother = new Rickshaw.Graph.Smoother( {
+	graph: graph,
+	element: document.getElementById('smoother')
 } );
+
 
 var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
   graph: graph,
   legend: legend
 } );
-
-var axes = new Rickshaw.Graph.Axis.Time( {
-  graph: graph
-} );
-axes.render();
-
 var slider = new Rickshaw.Graph.RangeSlider({
   graph: graph,
   element: document.getElementById('slider')
 });
+var xAxis = new Rickshaw.Graph.Axis.Time( {
+	graph: graph,
+	timeFixture: new Rickshaw.Fixtures.Time.Local()
+} );
+
+xAxis.render();
+
+var yAxis = new Rickshaw.Graph.Axis.Y( {
+	graph: graph,
+	tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+} );
+
+yAxis.render();
 
 
 setInterval( function() {
   graph.update();
   slider.update();
-}, 1200 );
+}, 5000 );
 
+
+var cci=1;
+$("#legend > ul > li > div.swatch").each(function(){
+  var col = $(this).css("background-color");
+  $(".senscard"+cci+" div.sensident").css("background-color", col);
+  cci++;
+});
 
 var update_graph_legend = function(){
   var is_single=false;
@@ -102,3 +123,23 @@ $("div.co").click(function(){
   update_graph_legend();
   return false;
 });
+
+
+
+$( "#slider-minmax" ).slider({
+			range: true,
+			min: -25,
+			max: 180,
+			values: [ 0, 60 ],
+			slide: function( event, ui ) {
+				$("#range-min").html(ui.values[ 0 ])
+        $("#range-max").html(ui.values[ 1 ])
+        graph.configure({
+          min:ui.values[ 0 ],
+          max:ui.values[ 1 ]
+        });
+        graph.update();
+
+
+			}
+		});
