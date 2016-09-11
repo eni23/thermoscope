@@ -24,11 +24,11 @@ nav.topbar {
 }
 
 .topbar > .title {
-  color: rgb(222, 222, 222);
+  color: rgb(255, 255, 255);
   margin-left: 10px;
   margin-top: 6px;
   font-family: Roboto;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 19.1px;
 }
 
@@ -104,55 +104,71 @@ div.buttons-nav > .bttn:first-child {
 
 /* left menu */
 
-#sidebar-wrapper h1 {
-  margin: 0px;
-  padding: 0px;
+
+.rickshaw_legend {
+  -webkit-user-select: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+#smoother.ui-slider-horizontal {
+  display: absolute;
+  margin-left: -98px;
+  margin-bottom: 369px;
+  width: 100px;
+}
+
+
+#slider-minmax {
+  width: 100px;
+  margin-left: 16px;
+  margin-top: 6px;
+}
+
+#sidebar-wrapper span.sbtitle {
   font-size: 1em;
   line-height: normal;
   margin-left: 8px;
   text-transform: uppercase;
   -webkit-user-select: none;
-  font-weight: 200;
+  font-weight: 100;
   font-family: 'Roboto', sans-serif;
-  color: rgb(90, 90, 90);
+  color: rgb(180, 180, 180);
+  display: inline-block;
 }
 
-.rickshaw_legend {
-  -webkit-user-select: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-}
-#smoother.ui-slider-horizontal {
-  display: absolute;
-  margin-left: -98px;
-  margin-bottom: 359px;
-  width: 100px;
-}
-
-#wrapper > div > h1:nth-last-child(2n){
-  margin-top: 10px;
-}
-#wrapper > div > h1:nth-child(2n){
-  margin-top: 8px;
-}
-
-#slider-minmax {
-  width: 100px;
-  margin-left: 16px;
-  margin-top: 10px;
-
-}
 span.rv {
-  color: rgb(131, 88, 0)
+  color: rgb(235, 157, 0);
 }
 div.rr {
   font-size: 12px;
   margin-left: 9px;
   text-transform: uppercase;
   -webkit-user-select:none;
-  font-weight: 200;
-  color: rgb(90, 90, 90);
+  color: rgb(180, 180, 180)!important;
   font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+span.sbtitle {
+  display: block;
+}
+span.sbtitle.tt-s{
+  margin-top: 4px;
+}
+span.sbtitle.tt-mm{
+  margin-top: 8px;
+}
+
+span.sbtitle.tt-ti{
+  clear: both;
+  padding-top: 10px;
+}
+#tticks{
+  font-family: 'Roboto', sans-serif;
+  margin-top: 1px;
+  color: rgb(235, 157, 0);
+  font-size: 12px;
+  font-weight: 100!important;
+  margin-left: 9px;
 }
 
 .rs_overwrite {
@@ -167,6 +183,9 @@ div.rr {
 
 .rs_overwrite.disabled {
   opacity: 0.35;
+}
+div.tc.disabled div.sensident {
+  background: rgb(110, 110, 110)!important;
 }
 
 .rs_overwrite div {
@@ -220,9 +239,6 @@ div.rr {
   margin-top: 15px;
 }
 
-.rs_overwrite.disabled div.sensident {
-  background: rgb(110, 110, 110);
-}
 
 
 .ui-slider-range {

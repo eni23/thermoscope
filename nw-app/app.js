@@ -9,6 +9,8 @@ try {
 
 var channel_length = 120;
 var bar_initialized = false;
+var total_ticks = 0;
+
 
 if (is_nwsj){
 
@@ -32,10 +34,12 @@ if (is_nwsj){
     var aa = data.split("=");
     var id = parseInt(aa[0]);
     var temp = parseFloat(aa[1]);
-    var tempf = temp.toFixed(2).substring(0,7)
+    var tempf = temp.toFixed(2).substring(0,7);
+    total_ticks++;
     if (id>0 && id < 5){
       $("#temp-val-"+id).html(tempf);
       add_temp_data(id, temp);
+      $("#tticks").html(total_ticks);
     }
   }
 
