@@ -29,17 +29,13 @@ if (is_nwsj){
   }
 
   function serial_rcv_data( data ){
-
     var aa = data.split("=");
     var id = parseInt(aa[0]);
     var temp = parseFloat(aa[1]);
     var tempf = temp.toFixed(2).substring(0,7)
     if (id>0 && id < 5){
-      var sel = "#temp-val-"+id;
-      $(sel).html(tempf+" °C");
+      $("#temp-val-"+id).html(tempf);
       add_temp_data(id, temp);
-      
-      //console.log(id + "=" + temp);
     }
   }
 

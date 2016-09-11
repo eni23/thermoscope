@@ -3,8 +3,6 @@ SERIAL_DEVICE		= /dev/ttyUSB*
 
 .PHONY: all inotify-watch-upload
 
-open-application:
-	nw nw-app
 
 all:
 		platformio -f -c vim run
@@ -35,3 +33,6 @@ find-serial:
 
 monitor: find-serial
 	screen $(USBTTY) $(MONITOR_BAUD)
+
+app:
+	nw nw-app > /dev/null 2>&1 

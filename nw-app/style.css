@@ -145,10 +145,13 @@ div.buttons-nav > .bttn:first-child {
 }
 .rs_overwrite div.val {
   display: block;
-  margin-top: -4px;
+  margin-top: -3.5px;
   margin-left: 5px;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 200;
+}
+.val.cc {
+  color: rgb(129, 129, 129)
 }
 
 .senscard1 {  margin-top: 0px; }

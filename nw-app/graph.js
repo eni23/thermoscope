@@ -1,6 +1,6 @@
 // set up our data series with 50 random data points
 var ts = Math.floor(Date.now() / 1000);
-var nn = {x:ts,y:9}
+var nn = {x:ts,y:22}
 var temp_data = [ [nn], [nn], [nn], [nn] ];
 
 var add_temp_data = function(sensor_id, data){
@@ -17,7 +17,6 @@ var graph = new Rickshaw.Graph( {
   width: 835,
   height: 510,
   min:0,
-  max:90,
   interpolation:"basis",
   renderer: 'line',
   series: [
