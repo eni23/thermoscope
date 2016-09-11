@@ -66,13 +66,7 @@ div.buttons-nav > .bttn:first-child {
 }
 
 
-#sidebar-wrapper h1 {
-  margin: 0px;
-  padding: 0px;
-  font-size: 1em;
-  line-height: normal;
-  margin-left: 8px;
-}
+
 
 
 
@@ -103,26 +97,62 @@ div.buttons-nav > .bttn:first-child {
 	position: relative;
 }
 
+
+
+
+
+
+/* left menu */
+
+#sidebar-wrapper h1 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1em;
+  line-height: normal;
+  margin-left: 8px;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(90, 90, 90);
+}
+
 .rickshaw_legend {
   -webkit-user-select: none;
   font-family: 'Roboto', sans-serif;
+  font-weight: 200;
 }
 #smoother.ui-slider-horizontal {
+  display: absolute;
   margin-left: -98px;
-  margin-bottom: 347px;
+  margin-bottom: 359px;
+  width: 100px;
+}
+
+#wrapper > div > h1:nth-last-child(2n){
+  margin-top: 10px;
+}
+#wrapper > div > h1:nth-child(2n){
+  margin-top: 8px;
 }
 
 #slider-minmax {
   width: 100px;
   margin-left: 16px;
   margin-top: 10px;
+
 }
 span.rv {
   color: rgb(131, 88, 0)
 }
 div.rr {
-  font-size: 11px;
-  margin-left: 11px;
+  font-size: 12px;
+  margin-left: 9px;
+  text-transform: uppercase;
+  -webkit-user-select:none;
+  font-weight: 200;
+  color: rgb(90, 90, 90);
+  font-family: 'Roboto', sans-serif;
 }
 
 .rs_overwrite {
