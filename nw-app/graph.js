@@ -85,7 +85,7 @@ yAxis.render();
 setInterval( function() {
   graph.update();
   slider.update();
-}, 250 );
+}, 5000 );
 
 
 var cci=1;
