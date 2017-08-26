@@ -1,3 +1,0 @@
-[submodule "nw-app/rickshaw"]
-	path = nw-app/rickshaw
-	url = git@github.com:shutterstock/rickshaw.git
